@@ -32,7 +32,7 @@ class TestInferenceSystem(unittest.TestCase):
     def test_unknown_application(self):
         user_input = {'app_type': 'unknown', 'performance': True}
         decision = infer(user_input)
-        self.assertIsNone(decision)
+        self.assertEqual(decision, "Coś poszło nie tak...")
 
 if __name__ == '__main__':
     unittest.main()
