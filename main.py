@@ -2,9 +2,10 @@ import random
 
 knowledge_base = {
     'Rule1': {'condition': 'app_type == "web"', 'language': ["Python", "JavaScript", "Java", "Ruby", "PHP", "Go"]},
-    'Rule2': {'condition': 'app_type == "mobile"', 'language': ["Java", "Kotlin", "Swift", "Objective-C", "Flutter", "React Native"]},
-    'Rule3': {'condition': 'app_type == "text" and performance', 'language': ["Bash/Shell", "Go"]},
-    'Rule4': {'condition': 'app_type == "text" and not performance', 'language': ["Bash/Shell", "Python", "Perl", "Lua", "Go"]},
+    'Rule2': {'condition': 'app_type == "mobile" and performance', 'language': ["Java", "Kotlin", "Swift"]},
+    'Rule3': {'condition': 'app_type == "mobile" and not performance', 'language': ["Java", "Kotlin", "Swift", "Objective-C", "Flutter", "React Native"]},
+    'Rule4': {'condition': 'app_type == "text"', 'language': ["Bash/Shell", "Go"]},
+    'Rule5': {'condition': 'app_type == "text" and not performance', 'language': ["Bash/Shell", "Python", "Perl", "Lua", "Go"]},
 }
 
 def infer(app_conditions):
