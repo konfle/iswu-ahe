@@ -1,0 +1,8 @@
+# Pliki tymczasowe
+*.pyc
+*.pyo
+__pycache__/
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db
