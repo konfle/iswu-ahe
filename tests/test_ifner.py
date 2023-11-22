@@ -9,8 +9,13 @@ class TestInferenceSystem(unittest.TestCase):
         decision = infer(user_input)
         self.assertIn(decision, ["Python", "JavaScript", "Java", "Ruby", "PHP", "Go"])
 
-    def test_mobile_application(self):
+    def test_mobile_application_with_performance(self):
         user_input = {'app_type': 'mobile', 'performance': True}
+        decision = infer(user_input)
+        self.assertIn(decision, ["Java", "Kotlin", "Swift"])
+
+    def test_mobile_application_without_performance(self):
+        user_input = {'app_type': 'mobile', 'performance': False}
         decision = infer(user_input)
         self.assertIn(decision, ["Java", "Kotlin", "Swift", "Objective-C", "Flutter", "React Native"])
 
