@@ -7,4 +7,8 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
+# Plik ze zmiennymi środowiska
 .env
+
+# Katalog wirtualnego środowiska Pythona
+.venv/
