@@ -2,6 +2,7 @@ import random
 import psycopg2
 from psycopg2 import sql
 
+# Funkcja pobierająca wiedzę ekspercką z bazy danych
 def get_rules_from_database():
     conn = psycopg2.connect(
         host="localhost",
@@ -15,6 +16,7 @@ def get_rules_from_database():
     conn.close()
     return rules
 
+# Funkcja wnioskująca język programowania w zależności od warunków aplikacji
 def infer(app_conditions, rules):
     for condition, language in rules:
         if eval(condition, globals(), app_conditions):
