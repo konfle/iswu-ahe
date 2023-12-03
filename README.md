@@ -77,7 +77,7 @@ CREATE TABLE knowledge_base (
 ```sql
 INSERT INTO knowledge_base (condition, languages) VALUES
     ('app_type == "web" and not performance', '{"Python", "JavaScript", "Java", "Ruby", "PHP", "Go"}'),
-    ('app_type == "web" and performane', '{"JavaScript", "Java", "Go"}'),
+    ('app_type == "web" and performance', '{"JavaScript", "Java", "Go"}'),
     ('app_type == "mobile" and performance', '{"Java", "Kotlin", "Swift"}'),
     ('app_type == "mobile" and not performance', '{"Java", "Kotlin", "Swift", "Objective-C", "Flutter", "React-Native"}'),
     ('app_type == "text"', '{"Bash/Shell", "Go"}'),
