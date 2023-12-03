@@ -1,15 +1,15 @@
 from fastapi import FastAPI, HTTPException
 
-import inference
-import db
+import app.inference as ai
+import app.db as ad
 
 app = FastAPI()
 
 @app.get("/user_input")
 def get_user_input(app_type: str, performance: bool):
-    #rules_from_db = get_rules_from_database()  # another endpoint?
+    rules_from_db = ad.get_rules_from_database()
     user_input = {"app_type": app_type, "performance": performance}
-    language = inference.infer(user_input, db.knowledge_base)
+    language = ai.infer(user_input, rules_from_db)
     if language:
         return {"decision": language}
     else:
