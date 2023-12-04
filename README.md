@@ -130,17 +130,52 @@ PS D:\iswu-ahe> minikube service iswu
 
 ### Unit Tests
 
-##### Command
+##### Command to run all test
 ```bash
 kubectl exec -it <pod name> -- bash -c "python -m unittest"
 ```
 
-##### Expected Result
+###### Expected Result
 ```bash
 PS D:\iswu-ahe> kubectl exec -it iswu-5498b7b64b-ttgz2 -- bash -c "python -m unittest"
-.......      
+.........
 ----------------------------------------------------------------------
-Ran 7 tests in 0.001s
+Ran 9 tests in 0.012s
+
+OK
+```
+
+##### Command to run specific test suite
+```bash
+kubectl exec -it <pod name> -- bash -c "python -m unittest <test directory>.<test suite name>"
+```
+
+###### Expected Result
+```bash
+PS D:\iswu-ahe> kubectl exec -it iswu-5498b7b64b-ttgz2 -- bash -c "python -m unittest tests.test_api"
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.010s
+
+OK
+
+```
+
+##### Command to run specific test case
+```bash
+kubectl exec -it <pod name> -- bash -c "python -m unittest <test directory>.<test suite name>.<test case name>"
+```
+
+```bash
+kubectl exec -it <pod name> -- bash -c "python -m unittest <test directory>.<test suite name>.<test class name>.<test case name>"
+```
+
+
+###### Expected Result
+```bash
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
 
 OK
 ```
