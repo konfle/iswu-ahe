@@ -28,7 +28,13 @@ If an application is designed to run in a Kubernetes-based environment, using Mi
 
 ## Database Management and Configuration
 
-This project using PostgreSQL data base.
+This project using PostgresSQL database.
+
+Database version:
+```bash
+root@postgres-5cdf75db4d-ts24n:/# psql --version
+psql (PostgreSQL) 16.1 (Debian 16.1-1.pgdg120+1)
+```
 
 ### Kubernetes Resources for Minikube Cluster
 
@@ -84,6 +90,42 @@ INSERT INTO knowledge_base (condition, languages) VALUES
     ('app_type == "text" and not performance', '{"Bash/Shell", "Python", "Perl", "Lua", "Go"}');
 ```
 
+
+## Deployment on Minikube Cluster and Service Launch
+##### Deployment
+```bash
+kubectl create --filename <path to database deployment>
+```
+
+##### Service
+```bash
+kubectl create --filename <path to database service>
+```
+
+##### Service Launch
+```bash
+minikube service <name of application service>
+```
+
+##### Expected Result (it may be different depending on OS)
+```bash
+PS D:\iswu-ahe> minikube service iswu
+|-----------|------|-------------|--------------|
+| NAMESPACE | NAME | TARGET PORT |     URL      |
+|-----------|------|-------------|--------------|
+| default   | iswu |             | No node port |
+|-----------|------|-------------|--------------|
+* service default/iswu has no node port
+* Starting tunnel for service iswu.
+|-----------|------|-------------|------------------------|
+| NAMESPACE | NAME | TARGET PORT |          URL           |
+|-----------|------|-------------|------------------------|
+| default   | iswu |             | http://127.0.0.1:57675 |
+|-----------|------|-------------|------------------------|
+* Opening service default/iswu in default browser...
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+```
+
 ## Quality Assurance and Testing Procedures
 
 ### Unit Tests
@@ -96,9 +138,9 @@ kubectl exec -it <pod name> -- bash -c "python -m unittest"
 ##### Expected Result
 ```bash
 PS D:\iswu-ahe> kubectl exec -it iswu-5498b7b64b-ttgz2 -- bash -c "python -m unittest"
-......
+.......      
 ----------------------------------------------------------------------
-Ran 6 tests in 0.001s
+Ran 7 tests in 0.001s
 
 OK
 ```
