@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, APIRouter
+from fastapi.middleware.cors import CORSMiddleware
 
 import app.inference as ai
 import app.db as ad
@@ -8,6 +9,14 @@ app = FastAPI(title="Application System for Selection of Optimal Programming Lan
                           "goals, helps select the most appropriate programming language for the task at hand.",
               contact={"name": "konfle", "url": "https://github.com/konfle"})
 router = APIRouter()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @router.get(path="/user_input", tags=["Collection of User Data"])
