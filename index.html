@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Language Selector</title>
+</head>
+<body>
+
+<h1>Programming Language Selector</h1>
+
+<form id="userInputForm">
+    <label for="appType">Application Type:</label>
+    <input type="text" id="appType" name="appType" required>
+
+    <label for="performance">Performance (true/false):</label>
+    <input type="text" id="performance" name="performance" required>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    function submitForm() {
+        // Collect user input
+        const appType = document.getElementById("appType").value;
+        const performance = document.getElementById("performance").value;
+
+        // Create URL with parameters
+        const url = `http://127.0.0.1:57350/user_input?app_type=${appType}&performance=${performance}`;
+
+        // Make a GET request to the FastAPI endpoint
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // Display the result to the user
+            document.getElementById("result").innerHTML = `<p>Decision: ${data.decision}</p>`;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById("result").innerHTML = `<p>Error: Something went wrong.</p>`;
+        });
+    }
+</script>
+
+</body>
+</html>
