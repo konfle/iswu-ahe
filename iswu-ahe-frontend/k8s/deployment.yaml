@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: iswuf
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: iswuf
   template:
     metadata:
       labels:
-        app: frontend
+        app: iswuf
     spec:
       containers:
-        - name: frontend
+        - name: iswuf
           image: konfle/iswu-frontend:latest
           ports:
             - containerPort: 80
