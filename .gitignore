@@ -12,21 +12,21 @@ Thumbs.db
 iswu-ahe-backend/.env
 
 # directory for Python virtual environment
-.venv/
-venv
+iswu-ahe-backend/.venv/
+iswu-ahe-backend/venv
 
 ### FRONTEND ###
 
 # dependencies
-/node_modules
-/.pnp
+iswu-ahe-frontend/node_modules
+iswu-ahe-frontend/.pnp
 .pnp.js
 
 # testing
-/coverage
+iswu-ahe-frontend/coverage
 
 # production
-/build
+iswu-ahe-frontend/build
 
 # misc
 .env.local
