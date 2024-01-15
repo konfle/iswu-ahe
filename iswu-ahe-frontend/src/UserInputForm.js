@@ -3,13 +3,13 @@ import React from 'react';
 class UserInputForm extends React.Component {
   state = {
     result: null,
-    error: null,
+    error: null,:wqQw
   };
 
   submitForm = () => {
     const appType = document.getElementById("appType").value;
     const performance = document.getElementById("performance").value;
-     const url = `http://127.0.0.1:65041/user_input?app_type=${appType}&performance=${performance}`;
+    const url = `http://127.0.0.1:65311/user_input?app_type=${appType}&performance=${performance}`;
 
     fetch(url)
       .then(response => response.json())

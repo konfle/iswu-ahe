@@ -9,6 +9,7 @@
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 ### Project Goal
 The project aims to develop an inference system that, leveraging prior information about an IT project and the user's objectives, assists in choosing the most suitable programming language for the task.
@@ -22,8 +23,10 @@ The recommended runtime environment for the application is [Minikube](https://mi
 - <b>Environmental Isolation:</b><br>
   Minikube allows you to run your Kubernetes cluster on a local machine, enabling you to environmentally isolate your application. This allows you to test the application in a controlled environment, minimize conflicts and see how the application will perform in real production conditions.
 
+
 - <b> Ease of Startup:</b><br>
-Minikube provides a simple and fast way to launch a Kubernetes cluster on a local machine. This allows developers to quickly access the Kubernetes environment without having to configure remote clusters.
+  Minikube provides a simple and fast way to launch a Kubernetes cluster on a local machine. This allows developers to quickly access the Kubernetes environment without having to configure remote clusters.
+
 
 - <b>Kubernetes Compatibility Testing:</b><br>
 If an application is designed to run in a Kubernetes-based environment, using Minikube allows it to be tested for Kubernetes compatibility even before deployment to an actual production cluster.

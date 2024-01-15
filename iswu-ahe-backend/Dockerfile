@@ -1,5 +1,5 @@
 # Użyj oficjalnego obrazu Pythona jako bazowego obrazu
-FROM python:3.11
+FROM python:3.10
 
 # Ustawienie katalogu roboczego w kontenerze
 WORKDIR /app
@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Uruchom aplikację
-CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
